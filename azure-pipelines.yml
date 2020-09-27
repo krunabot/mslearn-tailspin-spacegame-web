@@ -49,5 +49,8 @@ steps:
     zipAfterPublish: true
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
-  condition: succeeded()
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'SpaceGame'
+  #displayName: 'Publish Artifact: drop'
+  #condition: succeeded() # Only run if preceding steps successful Default
